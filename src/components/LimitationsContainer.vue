@@ -2,10 +2,10 @@
     import LimitationCard from './LimitationCard.vue';
 </script>
 <template>
-    <h2>
+    <h2 class="text-3xl font-semibold text-center">
         Limitations of BMI
     </h2>
-    <p>
+    <p class="font-base text-dark-electric-blue text-center mt-8 mb-14">
         Although BMI is often a practical indicator of healthy weight, it is not suited for 
         every person. Specific groups should carefully consider their BMI outcomes, and in 
         certain cases, the measurement may not be beneficial to use.

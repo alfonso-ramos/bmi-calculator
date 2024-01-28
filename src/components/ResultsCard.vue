@@ -6,8 +6,18 @@
     })
 </script>
 <template>
-    <div>
-
+    <div class="mb-10">
+        <img 
+            :src="'../src/assets/images/icon-' + icon + '.svg'" 
+            :alt="icon + ' icon'"
+            class="mb-8"
+        >
+        <p class="font-semibold text-2xl ">
+            {{ props.title }}
+        </p>
+        <p class="font-base text-dark-electric-blue mt-6">
+            {{ props.text }}
+        </p>
     </div>
 </template>
 
