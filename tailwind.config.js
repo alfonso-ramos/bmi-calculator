@@ -10,7 +10,8 @@ export default {
       'gunmetal': '#253347',
       'dark-electric-blue': '#5E6E85',
       'borders': '#D8E2E7',
-      'white': '#fff'
+      'white': '#fff',
+      'bg-gradient': '#D6E6FE'
     }
   },
   plugins: [],

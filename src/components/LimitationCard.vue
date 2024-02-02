@@ -5,7 +5,7 @@
         icon: String})
 </script>
 <template>
-    <div  class="p-6 bg-white mt-4 rounded-2xl">
+    <div  class="p-6 bg-white mt-4 rounded-2xl shadow-xl">
         <div class="flex gap-4">
             <img :src="'../src/assets/images/icon-' + icon + '.svg'" :alt="icon + ' icon'">
             <p class="pt-1 text-xl font-semibold">
