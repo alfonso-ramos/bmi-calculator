@@ -5,12 +5,12 @@
     <h2 class="text-3xl font-semibold text-center">
         Limitations of BMI
     </h2>
-    <p class="font-base text-dark-electric-blue text-center mt-8 mb-14">
+    <p class="font-base text-dark-electric-blue text-center mt-8 mb-14 mx-8">
         Although BMI is often a practical indicator of healthy weight, it is not suited for 
         every person. Specific groups should carefully consider their BMI outcomes, and in 
         certain cases, the measurement may not be beneficial to use.
     </p>
-    <div class="mb-20 md:grid md:grid-cols-2 md:gap-6">
+    <div class="mb-20 md:grid md:grid-cols-2 md:gap-6 mx-8">
         <LimitationCard 
             icon="gender"
             title="Gender"

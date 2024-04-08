@@ -13,38 +13,6 @@ import Calculator from './Calculator.vue';
             and
             well-being.
         </p>
-
         <Calculator />
-        <!-- <div>
-            <h2>
-                Enter your details below
-            </h2>
-            <div>
-                <div>
-                    <input type="checkbox" id="metric" name="metric">
-                    <label for="metric">Metric</label>
-                </div>
-                <div>
-                    <input type="checkbox" id="imperial" name="imperial">
-                    <label for="imperial">Imperial</label>
-                </div>
-            </div>
-        </div>
-    
-    
-    
-    
-        Metric
-        Imperial
-    
-        Height
-        Weight
-    
-        Your BMI is...
-    
-        add score -->
-
-        <!-- Your BMI suggests you're 
-        Your ideal weight is between add range. -->
     </div>
 </template>

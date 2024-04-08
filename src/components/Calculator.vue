@@ -49,7 +49,7 @@ watch([height, weight, feet, inches, stones, pounds], () => {
                         id="blue" 
                         v-model="selectedSystem"/>
                     <span
-                        class="absolute text-blue transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                        class="absolute text-blue transition-opacity opacity-0 pointer-events-none translate-y-[2.5px] -translate-x-[17px] peer-checked:opacity-100">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor">
                             <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
                         </svg>
@@ -70,7 +70,7 @@ watch([height, weight, feet, inches, stones, pounds], () => {
                         id="blue" 
                         v-model="selectedSystem"/>
                     <span
-                        class="absolute text-blue transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+                        class="absolute text-blue transition-opacity opacity-0 pointer-events-none translate-y-[2.5px] -translate-x-[17px] peer-checked:opacity-100">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor">
                             <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
                         </svg>
@@ -87,7 +87,7 @@ watch([height, weight, feet, inches, stones, pounds], () => {
                 <p class="text-sm text-dark-electric-blue">Height</p>
             </label>
             <div class="flex bg-white rounded-lg border border-solid border-borders">
-                <input id="height" type="number" inputmode="numeric" min="0" placeholder="0" v-model.number="height">
+                <input class="h" id="height" type="number" inputmode="numeric" min="0" placeholder="0" v-model.number="height">
                 <p>cm</p>
             </div>
             <label for="weight">
