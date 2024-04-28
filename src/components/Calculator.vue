@@ -35,7 +35,7 @@ watch([height, weight, feet, inches, stones, pounds], () => {
 </script>
 
 <template>
-    <div class="bg-white rounded-3xl mx-6 p-6">
+    <div class="bg-white rounded-3xl p-6">
         <h2 class="text-2xl font-semibold">Enter yout details below</h2>
         <div class="flex justify-between">
             <label class="relative flex items-center p-3 rounded-full cursor-pointer gap-3" htmlFor="blue">
@@ -86,39 +86,39 @@ watch([height, weight, feet, inches, stones, pounds], () => {
             <label for="height">
                 <p class="text-sm text-dark-electric-blue">Height</p>
             </label>
-            <div class="flex bg-white rounded-lg border border-solid border-borders">
-                <input class="h" id="height" type="number" inputmode="numeric" min="0" placeholder="0" v-model.number="height">
-                <p>cm</p>
+            <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 max-w-[280px]">
+                <input class="font-semibold text-2xl w-[170px]" id="height" type="number" inputmode="numeric" min="0" placeholder="0" v-model.number="height">
+                <p class="text-2xl text-blue font-semibold">cm</p>
             </div>
             <label for="weight">
                 <p class="text-sm text-dark-electric-blue">Weight</p>
             </label>
-            <div class="flex bg-white rounded-lg border border-solid border-borders">
-                <input id="weight" placeholder="0" type="number" v-model.number="weight">
-                <p>kg</p>
+            <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 max-w-[280px]">
+                <input class="font-semibold text-2xl w-[170px]" id="weight" placeholder="0" type="number" v-model.number="weight">
+                <p class="text-2xl text-blue font-semibold">kg</p>
             </div>
         </div>
         <div v-else>
             <label for="feet">Height</label>
-            <div>
-                <div class="flex bg-white rounded-lg border border-solid border-borders">
-                    <input id="feet" type="number" v-model.number="feet">
-                    <p>ft</p>
-                </div class="flex bg-white rounded-lg border border-solid border-borders">
-                <div class="flex bg-white rounded-lg border border-solid border-borders">
-                    <input id="inches" type="number" v-model.number="inches">
-                    <p>in</p>
+            <div class="flex gap-4">
+                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
+                    <input class="w-10" id="feet" type="number" v-model.number="feet">
+                    <p class="text-2xl text-blue font-semibold">ft</p>
+                </div>
+                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
+                    <input class="w-10" id="inches" type="number" v-model.number="inches">
+                    <p class="text-2xl text-blue font-semibold">in</p>
                 </div>
             </div>
             <label for="stones">Weight</label>
-            <div>
-                <div class="flex bg-white rounded-lg border border-solid border-borders">
-                    <input id="stones" type="number" v-model.number="stones">
-                    <p>st</p>
+            <div class="flex gap-4">
+                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
+                    <input class="w-10" id="stones" type="number" v-model.number="stones">
+                    <p class="text-2xl text-blue font-semibold">st</p>
                 </div>
-                <div class="flex bg-white rounded-lg border border-solid border-borders">
-                    <input id="pounds" type="number" v-model.number="pounds">
-                    <p>lbs</p>
+                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
+                    <input class="w-10" id="pounds" type="number" v-model.number="pounds">
+                    <p class="text-2xl text-blue font-semibold">lbs</p>
                 </div>
             </div>
         </div>
@@ -126,7 +126,7 @@ watch([height, weight, feet, inches, stones, pounds], () => {
             <p>Calculating...</p>
         </div>
         <div v-else>
-            <p v-if="bmi !== null">BMI : {{ bmi.toFixed(1) }}</p>        </div>
+            <p v-if="bmi !== null">BMI : {{ bmi.toFixed(1) }}</p></div>
     </div>
 </template>
 

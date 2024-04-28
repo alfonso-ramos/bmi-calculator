@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <div class="md:flex">
+    <div class="container md:flex">
         <img class="md:max-h-[400px] md:relative md:right-20 md:my-auto" src="../assets/images/image-man-eating.webp" alt="man eating">
         <div>
             <h2 class="font-semibold text-3xl mt-12 mb-8">
