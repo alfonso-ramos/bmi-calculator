@@ -2,7 +2,7 @@
     import LimitationCard from './LimitationCard.vue';
 </script>
 <template>
-    <h2 class="text-3xl font-semibold text-center">
+    <h2 class="text-3xl font-semibold text-center md:mt-24">
         Limitations of BMI
     </h2>
     <p class="font-base text-dark-electric-blue text-center mt-8 mb-14 mx-8">

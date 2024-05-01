@@ -35,22 +35,18 @@ watch([height, weight, feet, inches, stones, pounds], () => {
 </script>
 
 <template>
-    <div class="bg-white rounded-3xl p-6">
+    <div class="bg-white rounded-3xl p-6 shadow-lg">
         <h2 class="text-2xl font-semibold">Enter yout details below</h2>
         <div class="flex justify-between">
             <label class="relative flex items-center p-3 rounded-full cursor-pointer gap-3" htmlFor="blue">
                 <div>
-                    <input 
-                        name="color" 
-                        type="radio"
-                        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-borders text-blue transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-8 before:w-8 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue before:opacity-0 before:transition-opacity
-                        checked:before:bg-blue checked:before:opacity-10 hover:border-blue"
-                        value="metric"
-                        id="blue" 
-                        v-model="selectedSystem"/>
+                    <input name="color" type="radio" class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-borders text-blue transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-8 before:w-8 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue before:opacity-0 before:transition-opacity
+                        checked:before:bg-blue checked:before:opacity-10 hover:border-blue" value="metric" id="blue"
+                        v-model="selectedSystem" />
                     <span
                         class="absolute text-blue transition-opacity opacity-0 pointer-events-none translate-y-[2.5px] -translate-x-[17px] peer-checked:opacity-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 16 16"
+                            fill="currentColor">
                             <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
                         </svg>
                     </span>
@@ -61,63 +57,71 @@ watch([height, weight, feet, inches, stones, pounds], () => {
             </label>
             <label class="relative flex items-center p-3 rounded-full cursor-pointer gap-3" htmlFor="blue">
                 <div>
-                    <input 
-                        name="color" 
-                        type="radio"
-                        class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-borders text-blue transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-8 before:w-8 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue before:opacity-0 before:transition-opacity
-                        checked:before:bg-blue checked:before:opacity-10 hover:border-blue"
-                        value="imperial"
-                        id="blue" 
-                        v-model="selectedSystem"/>
+                    <input name="color" type="radio" class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-borders text-blue transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-8 before:w-8 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue before:opacity-0 before:transition-opacity
+                        checked:before:bg-blue checked:before:opacity-10 hover:border-blue" value="imperial" id="blue"
+                        v-model="selectedSystem" />
                     <span
                         class="absolute text-blue transition-opacity opacity-0 pointer-events-none translate-y-[2.5px] -translate-x-[17px] peer-checked:opacity-100">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 16 16" fill="currentColor">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-3.5 w-3.5" viewBox="0 0 16 16"
+                            fill="currentColor">
                             <circle data-name="ellipse" cx="8" cy="8" r="8"></circle>
                         </svg>
                     </span>
                 </div>
                 <p class="font-semibold">
-                    Imperial    
+                    Imperial
                 </p>
             </label>
         </div>
 
-        <div v-if="selectedSystem === 'metric'">
-            <label for="height">
-                <p class="text-sm text-dark-electric-blue">Height</p>
-            </label>
-            <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 max-w-[280px]">
-                <input class="font-semibold text-2xl w-[170px]" id="height" type="number" inputmode="numeric" min="0" placeholder="0" v-model.number="height">
-                <p class="text-2xl text-blue font-semibold">cm</p>
+        <div v-if="selectedSystem === 'metric'" class="md:grid md:grid-cols-2 gap-6">
+            <div>
+                <label class="inline-block" for="height">
+                    <p class="text-sm w-20 text-dark-electric-blue">Height</p>
+                </label>
+                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 ">
+                    <input class="font-semibold text-2xl w-[170px]" id="height" type="number" inputmode="numeric"
+                        min="0" placeholder="185" v-model.number="height">
+                    <p class="text-2xl text-blue font-semibold">cm</p>
+                </div>
             </div>
-            <label for="weight">
-                <p class="text-sm text-dark-electric-blue">Weight</p>
-            </label>
-            <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 max-w-[280px]">
-                <input class="font-semibold text-2xl w-[170px]" id="weight" placeholder="0" type="number" v-model.number="weight">
-                <p class="text-2xl text-blue font-semibold">kg</p>
+
+            <div>
+
+                <label class="inline-block" for="weight">
+                    <p class="text-sm w-20 text-dark-electric-blue">Weight</p>
+                </label>
+                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5">
+                    <input class="font-semibold text-2xl w-[170px]" id="weight" placeholder="80" type="number"
+                        v-model.number="weight">
+                    <p class="text-2xl text-blue font-semibold">kg</p>
+                </div>
             </div>
         </div>
         <div v-else>
             <label for="feet">Height</label>
             <div class="flex gap-4">
                 <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
-                    <input class="w-10" id="feet" type="number" v-model.number="feet">
+                    <input class="font-semibold text-2xl w-10" id="feet" type="number" v-model.number="feet"
+                        placeholder="5">
                     <p class="text-2xl text-blue font-semibold">ft</p>
                 </div>
                 <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
-                    <input class="w-10" id="inches" type="number" v-model.number="inches">
+                    <input class="font-semibold text-2xl w-10" id="inches" type="number" v-model.number="inches"
+                        placeholder="11">
                     <p class="text-2xl text-blue font-semibold">in</p>
                 </div>
             </div>
             <label for="stones">Weight</label>
             <div class="flex gap-4">
                 <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
-                    <input class="w-10" id="stones" type="number" v-model.number="stones">
+                    <input class="font-semibold text-2xl w-10" id="stones" type="number" v-model.number="stones"
+                        placeholder="11">
                     <p class="text-2xl text-blue font-semibold">st</p>
                 </div>
                 <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
-                    <input class="w-10" id="pounds" type="number" v-model.number="pounds">
+                    <input class=" font-semibold text-2xl w-10" id="pounds" type="number" v-model.number="pounds"
+                        placeholder="4">
                     <p class="text-2xl text-blue font-semibold">lbs</p>
                 </div>
             </div>
@@ -126,7 +130,7 @@ watch([height, weight, feet, inches, stones, pounds], () => {
             <p>Calculating...</p>
         </div>
         <div v-else>
-            <p v-if="bmi !== null">BMI : {{ bmi.toFixed(1) }}</p></div>
+            <p v-if="bmi !== null">BMI : {{ bmi.toFixed(1) }}</p>
+        </div>
     </div>
 </template>
-
