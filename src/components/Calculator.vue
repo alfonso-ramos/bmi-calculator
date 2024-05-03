@@ -21,9 +21,7 @@ const calculateBMI = () => {
             const heightInInches = feet.value * 12 + inches.value;
             const weightInPounds = stones.value * 14 + pounds.value;
             bmi.value = (weightInPounds * 703) / (heightInInches * heightInInches);
-
         }
-
         isCalculating.value = false;
     }, 1000);
 };
@@ -33,11 +31,10 @@ watch([height, weight, feet, inches, stones, pounds], () => {
 });
 
 </script>
-
 <template>
-    <div class="bg-white rounded-3xl p-6 shadow-lg">
-        <h2 class="text-2xl font-semibold">Enter yout details below</h2>
-        <div class="flex justify-between">
+    <div class="bg-white rounded-3xl p-6 shadow-lg mt-12 xl:mt-0">
+        <h2 class="text-2xl font-semibold md:text-left mb-6">Enter yout details below</h2>
+        <div class="grid grid-cols-2 justify-between">
             <label class="relative flex items-center p-3 rounded-full cursor-pointer gap-3" htmlFor="blue">
                 <div>
                     <input name="color" type="radio" class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-full border border-borders text-blue transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-8 before:w-8 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue before:opacity-0 before:transition-opacity
@@ -76,8 +73,8 @@ watch([height, weight, feet, inches, stones, pounds], () => {
 
         <div v-if="selectedSystem === 'metric'" class="md:grid md:grid-cols-2 gap-6">
             <div>
-                <label class="inline-block" for="height">
-                    <p class="text-sm w-20 text-dark-electric-blue">Height</p>
+                <label for="height">
+                    <p class="text-sm text-left text-dark-electric-blue my-2">Height</p>
                 </label>
                 <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 ">
                     <input class="font-semibold text-2xl w-[170px]" id="height" type="number" inputmode="numeric"
@@ -88,8 +85,8 @@ watch([height, weight, feet, inches, stones, pounds], () => {
 
             <div>
 
-                <label class="inline-block" for="weight">
-                    <p class="text-sm w-20 text-dark-electric-blue">Weight</p>
+                <label for="weight">
+                    <p class="text-sm text-left text-dark-electric-blue my-2">Weight</p>
                 </label>
                 <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5">
                     <input class="font-semibold text-2xl w-[170px]" id="weight" placeholder="80" type="number"
@@ -99,38 +96,55 @@ watch([height, weight, feet, inches, stones, pounds], () => {
             </div>
         </div>
         <div v-else>
-            <label for="feet">Height</label>
-            <div class="flex gap-4">
-                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
+            <label for="feet">
+                <p class="text-sm text-left text-dark-electric-blue my-2">
+                    Height
+                </p>
+            </label>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 ">
                     <input class="font-semibold text-2xl w-10" id="feet" type="number" v-model.number="feet"
                         placeholder="5">
                     <p class="text-2xl text-blue font-semibold">ft</p>
                 </div>
-                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
+                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5">
                     <input class="font-semibold text-2xl w-10" id="inches" type="number" v-model.number="inches"
                         placeholder="11">
                     <p class="text-2xl text-blue font-semibold">in</p>
                 </div>
             </div>
-            <label for="stones">Weight</label>
-            <div class="flex gap-4">
-                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
+            <label for="stones">
+                <p class="text-sm text-left text-dark-electric-blue my-2">Weight</p>
+            </label>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5">
                     <input class="font-semibold text-2xl w-10" id="stones" type="number" v-model.number="stones"
                         placeholder="11">
                     <p class="text-2xl text-blue font-semibold">st</p>
                 </div>
-                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 w-[132px]">
+                <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5">
                     <input class=" font-semibold text-2xl w-10" id="pounds" type="number" v-model.number="pounds"
                         placeholder="4">
                     <p class="text-2xl text-blue font-semibold">lbs</p>
                 </div>
             </div>
         </div>
-        <div v-if="isCalculating">
-            <p>Calculating...</p>
+        <div v-if="isCalculating" class="text-left text-white bg-blue my-6 rounded-lg p-8 ">
+            <p class="text-2xl font-bold">Calculating...</p>
         </div>
-        <div v-else>
-            <p v-if="bmi !== null">BMI : {{ bmi.toFixed(1) }}</p>
+        <div v-else >
+            <div v-if="bmi !== null" class="text-left text-white bg-blue my-6 rounded-lg p-8 md:rounded-r-full md:grid md:grid-cols-2 md:items-center">
+                <div>
+                    <p class="text-base font-bold">Your BMI is...</p>
+                    <p class="font-bold text-5xl mt-2 mb-6 md:mb-0">{{ bmi.toFixed(1) }}</p>
+                </div>
+                <div>
+                    <p v-if="bmi <= 18.5" class="text-base">Your BMI indicates that you are underweight. Its ideal weight is between <span class="font-bold">63.3 kg and 85.2 kg.</span></p>
+                    <p v-else-if="bmi <= 24.9" class="text-base">Your BMI suggests you’re a healthy weight. Your ideal weight is between <span class="font-bold">63.3 kg and 85.2 kg.</span></p>
+                    <p v-else-if="bmi <= 29.9" class="text-base">Your BMI indicates that you are overweight. Its ideal weight is between <span class="font-bold">63.3 kg and 85.2 kg.</span></p>
+                    <p v-else-if="bmi >= 30" class="text-base">Tu IMC indica que tienes obesidad. Su peso ideal está entre <span class="font-bold">63.3 kg and 85.2 kg.</span></p>
+                </div>
+            </div>
         </div>
     </div>
 </template>

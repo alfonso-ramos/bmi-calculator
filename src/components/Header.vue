@@ -2,7 +2,7 @@
 import Calculator from './Calculator.vue';
 </script>
 <template>
-    <div class="container bg-gradient rounded-b-md pt-8 px-6">
+    <div class="container bg-gradient rounded-b-lg pt-8 px-6 max-h-[737px]">
         <div class="text-center xl:text-left">
             <img class="mx-auto size-10 mb-6 xl:mx-0 " src="../assets/images/logo.svg" alt="logo">
             <div class="xl:grid xl:grid-cols-2 xl:gap-28 xl:items-center">
