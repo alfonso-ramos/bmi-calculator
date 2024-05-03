@@ -77,7 +77,7 @@ watch([height, weight, feet, inches, stones, pounds], () => {
                     <p class="text-sm text-left text-dark-electric-blue my-2">Height</p>
                 </label>
                 <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5 ">
-                    <input class="font-semibold text-2xl w-[170px]" id="height" type="number" inputmode="numeric"
+                    <input class="font-semibold text-2xl max-w-[133px]" id="height" type="number" inputmode="numeric"
                         min="0" placeholder="185" v-model.number="height">
                     <p class="text-2xl text-blue font-semibold">cm</p>
                 </div>
@@ -89,7 +89,7 @@ watch([height, weight, feet, inches, stones, pounds], () => {
                     <p class="text-sm text-left text-dark-electric-blue my-2">Weight</p>
                 </label>
                 <div class="flex justify-between bg-white rounded-lg border border-solid border-borders p-5">
-                    <input class="font-semibold text-2xl w-[170px]" id="weight" placeholder="80" type="number"
+                    <input class="font-semibold text-2xl max-w-[133px]" id="weight" placeholder="80" type="number"
                         v-model.number="weight">
                     <p class="text-2xl text-blue font-semibold">kg</p>
                 </div>

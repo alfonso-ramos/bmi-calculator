@@ -2,8 +2,8 @@
 </script>
 
 <template>
-    <div class="container md:flex items-center">
-        <img class="md:max-h-[400px] md:relative md:right-20 md:my-auto" src="../assets/images/image-man-eating.webp"
+    <div class="container md:flex items-center mt-32 md:mt-16">
+        <img class=" md:max-h-[400px] md:relative md:right-20 md:my-auto" src="../assets/images/image-man-eating.webp"
             alt="man eating">
         <div>
             <h2 class="font-semibold text-3xl mt-12 mb-8">
